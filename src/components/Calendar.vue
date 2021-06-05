@@ -1,11 +1,9 @@
 <template>
-  <div class="overflow-y-scroll w-full lg:px-12">
+  <div class="overflow-y-scroll w-full lg:px-12 pt-16">
     <div class="border-collapse text-left relative">
       <div class="relative lg:w-3/4 mx-auto">
         <div class="flex" v-for="hour in [...Array(24).keys()]">
-          <div
-            class="w-12 text-xs select-none space-y-1 -mt-2 border-r dark:text-warm-gray-600 dark:border-dark-300 ml-4"
-          >
+          <div class="w-12 text-xs select-none space-y-1 -mt-2 border-r dark:text-warm-gray-600 dark:border-dark-300 ml-4">
             <div class="font-light">{{ getHour(hour) }}</div>
             <div class="font-light hidden">{{ getMinutes(hour, 15) }}</div>
             <div class="font-light hidden">{{ getMinutes(hour, 30) }}</div>
@@ -27,13 +25,13 @@
             @mousedown="dragStart"
             @dblclick="todo.finished = !todo.finished"
             :style="{ height: todo.duration / 15 * 20 - 2 + 'px' }"
-            :class="{ 'line-through': todo.finished, [`bg-${todo.color}-300/70`]: true, [`dark:bg-${todo.color}-400/70`]: true }"
-            class="text-xs rounded-3px px-2 py-1 select-none"
+            :class="{ 'line-through': todo.finished, [`bg-${todo.color}-300/70`]: true, [`dark:bg-${todo.color}-300/80`]: true }"
+            class="text-xs rounded-3px px-2 py-1 select-none backdrop-filter backdrop-blur-sm cursor-pointer"
           >{{ todo.title }}, {{ getDuration(todo.date, todo.duration) }}</div>
         </div>
       </div>
       <hr
-        class="absolute w-full bg-red-500 dark:bg-red-700 h-0.25 z-25 border-none"
+        class="absolute w-full bg-red-500 dark:bg-red-900 h-0.25 z-25 border-none"
         :style="{ top: timeLength + 'px' }"
       />
     </div>
@@ -213,7 +211,7 @@ function dragEnd() {
     const element = document.getElementById(item.value)
     if (element) {
       element.style.zIndex = "0"
-      if (element.firstChild) (element.firstChild as HTMLElement).style.cursor = "default"
+      if (element.firstChild) (element.firstChild as HTMLElement).style.cursor = "pointer"
     }
     const target = todos.value.find(i => i.id === item.value)
     if (target) {

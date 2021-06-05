@@ -60,7 +60,7 @@ const navs = [
     ],
   },
   {
-    title: "Subscriptions",
+    title: "Todos",
     children: [
       {
         name: "Shortcuts",

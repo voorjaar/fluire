@@ -2,7 +2,7 @@
   <nav class="overflow-y-scroll w-full vstack p-3" in:fade>
     <slot />
     <div class="vstack select-none my-3" v-for="nav in navs">
-      <h2 class="text-gray-600 dark:text-gray-400 font-medium text-xs ml-1 mb-1">{{ nav.title }}</h2>
+      <h2 class="text-gray-600 dark:text-light-600 font-serif font-medium text-xs ml-1 mb-1">{{ nav.title }}</h2>
       <div class="vstack">
         <button v-for="child in nav.children" class="hstack rounded py-1.5 px-1 my-0.5 hocus:(bg-gray-100 bg-opacity-70 blur-5) dark:hocus:bg-dark-400">
           <span class="text-blue-500 text-xl" />

@@ -12,7 +12,7 @@ export default defineConfig({
       },
     },
   },
-  safelist: ['pink' , 'rose' , 'red' , 'orange' , 'yellow' , 'lime' , 'green' , 'teal' , 'cyan' , 'blue' , 'indigo' , 'purple'].map(i => `bg-${i}-300/70 dark:bg-${i}-400/70`),
+  safelist: ['pink' , 'rose' , 'red' , 'orange' , 'yellow' , 'lime' , 'green' , 'teal' , 'cyan' , 'blue' , 'indigo' , 'purple'].map(i => `bg-${i}-300/70 dark:bg-${i}-300/80`),
   shortcuts: {
     hstack: 'flex items-center',
     vstack: 'flex flex-col',
