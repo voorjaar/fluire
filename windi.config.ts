@@ -4,11 +4,11 @@ import colors from 'windicss/colors';
 import { defineConfig } from 'vite-plugin-windicss';
 
 export default defineConfig({
-  darkMode: 'media',
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        gray: colors.blueGray,
+        gray: colors.coolGray,
       },
     },
   },

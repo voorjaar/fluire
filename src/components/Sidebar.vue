@@ -14,30 +14,15 @@
   </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script setup lang="ts">
+import { defineProps } from 'vue'
+import type { PropType } from 'vue'
+import type { Nav } from '../interfaces'
 
-export interface NavItem {
-  id?: string
-  name: string
-  icon: string
-}
-
-export interface Nav {
-  title: string
-  children: NavItem[]
-}
-
-export default defineComponent({
-  props: {
-    navs: {
+defineProps({
+  navs: {
       type: Array as PropType<Nav[]>,
       required: true
     }
-  },
 })
 </script>
-
-<style>
-
-</style>
