@@ -1,6 +1,5 @@
 <template>
   <div class="overflow-y-scroll w-full lg:px-12">
-    <!-- 0..23 -->
     <div class="border-collapse text-left relative">
       <div class="relative lg:w-3/4 mx-auto">
         <div class="flex" v-for="hour in [...Array(24).keys()]">
@@ -12,15 +11,21 @@
           </div>
           <div class="flex-grow border-t select-none vstack -ml-2 px-2 h-80px"></div>
         </div>
-        <div class="py-px absolute pl-16 pr-4 w-full" :style="{ top: getPosition(todo.date) + 'px' }" v-for="todo in todos" :id="todo.id">
+        <div
+          class="py-px absolute pl-16 pr-4 w-full"
+          :style="{ top: getPosition(todo.date, offsets[todo.id]) + 'px' }"
+          v-for="todo in todos"
+          :key="todo.id"
+          :id="todo.id"
+          @touchstart="touchStart"
+          @touchmove="touchMove"
+          @touchend="touchEnd"
+          @mousedown="dragStart"
+        >
           <div
-            :style="{ height: todo.duration/15 * 20 - 2 + 'px' }"
+            :style="{ height: todo.duration / 15 * 20 - 2 + 'px' }"
             :class="{ 'line-through': todo.finished, [`bg-${todo.color}-300`]: true }"
-            class="text-xs rounded-3px px-2 py-1 bg-opacity-70"
-            @touchstart="touchStart"
-            @touchmove="touchMove"
-            @touchend="touchEnd"
-            @mousedown="dragStart"
+            class="text-xs rounded-3px px-2 py-1 bg-opacity-70 select-none"
           >{{ todo.title }}, {{ getDuration(todo.date, todo.duration) }}</div>
         </div>
       </div>
@@ -30,7 +35,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, reactive } from 'vue'
 import type { Todo } from '../interface'
 
 export default defineComponent({
@@ -128,6 +133,9 @@ export default defineComponent({
       },
     ])
 
+    const offsets = reactive<{ [key: string]: number }>({})
+    todos.value.forEach(({ id }) => offsets[id] = 0)
+
     let timeLength = ref<number>(calcTimeLength())
     let item = ref<string | undefined>(undefined)
     let start = ref(0)
@@ -159,17 +167,22 @@ export default defineComponent({
     function getDuration(date: string, duration: number) {
       const dateStart = new Date(Date.parse(date))
       const dateEnd = new Date(Date.parse(date) + duration * 60000)
-      return `${dateStart.toLocaleTimeString()} - ${dateEnd.toLocaleTimeString()}`
+      const option: Intl.DateTimeFormatOptions = {
+        hour12: true,
+        hour: 'numeric',
+        minute: 'numeric'
+      }
+      return `${dateStart.toLocaleTimeString(config.locale, option)} - ${dateEnd.toLocaleTimeString(config.locale, option)}`
     }
 
-    function getPosition(date: string) {
+    function getPosition(date: string, offset = 0) {
       const dateStart = new Date(Date.parse(date))
       const minutes = dateStart.getHours() * 60 + dateStart.getMinutes()
-      return minutes/15 * 20
+      return (minutes + offset) / 15 * 20
     }
 
     function dragStart(e: MouseEvent) {
-      item.value = (e.target as HTMLElement).id
+      item.value = (e.target as HTMLElement).parentElement?.id
       start.value = e.clientY - dy.value
 
       document.onmouseup = dragEnd
@@ -177,37 +190,57 @@ export default defineComponent({
     }
 
     function dragMove(e: MouseEvent) {
-      const id = item.value ? document.getElementById(item.value) : undefined
-      if (!id) return
-      const count = Math.ceil((e.clientY - start.value) / 20)
-      id.style.transform = `translate(0, ${count * 20 + Math.floor(count / 4)}px)`
+      if (item.value) {
+        const element = document.getElementById(item.value)
+        if (!element) return
+        const count = Math.ceil((e.clientY - start.value) / 20)
+        if (item.value) offsets[item.value] = count * 15
+      }
     }
 
     function dragEnd() {
-      item.value = undefined;
-      document.onmouseup = null;
+      if (item.value) {
+        const index = todos.value.findIndex(i => i.id === item.value)
+        if (index !== -1) {
+          const target = todos.value[index]
+          todos.value[index].date = new Date(Date.parse(target.date) + offsets[item.value] * 60000).toISOString()
+          offsets[item.value] = 0
+        }
+      }
+      item.value = undefined
+      document.onmouseup = null
       document.onmousemove = null
     }
 
     function touchStart(e: TouchEvent) {
       if (e.target) {
-        item.value = (e.target as HTMLElement).id
+        item.value = (e.target as HTMLElement).parentElement?.id
         start.value = e.touches[0].clientY - dy.value
       }
     }
 
     function touchMove(e: TouchEvent) {
-      const id = item.value ? document.getElementById(item.value) : undefined
-      if (!id) return
-      const count = (e.touches[0].clientY > start.value ? Math.ceil : Math.round)((e.touches[0].clientY - start.value) / 20)
-      id.style.transform = `translate(0, ${count * 20 + Math.floor(count / 4)}px)`
+      if (item.value) {
+        const element = document.getElementById(item.value)
+        if (!element) return
+        const count = Math.ceil((e.touches[0].clientY - start.value) / 20)
+        if (item.value) offsets[item.value] = count * 15
+      }
     }
 
-    function touchEnd(e: TouchEvent) {
-      item.value = undefined;
+    function touchEnd() {
+      if (item.value) {
+        const index = todos.value.findIndex(i => i.id === item.value)
+        if (index !== -1) {
+          const target = todos.value[index]
+          todos.value[index].date = new Date(Date.parse(target.date) + offsets[item.value] * 60000).toISOString()
+          offsets[item.value] = 0
+        }
+      }
+      item.value = undefined
     }
 
-    return { config, todos, timeLength, calcTimeLength, getHour, getMinutes, getDuration, getPosition, dragStart, touchStart, touchMove, touchEnd }
+    return { config, todos, offsets, timeLength, calcTimeLength, getHour, getMinutes, getDuration, getPosition, dragStart, touchStart, touchMove, touchEnd }
   }
 })
 </script>
