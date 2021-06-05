@@ -3,13 +3,13 @@
     <div class="border-collapse text-left relative">
       <div class="relative lg:w-3/4 mx-auto">
         <div class="flex" v-for="hour in [...Array(24).keys()]">
-          <div class="w-12 text-xs select-none space-y-1 -mt-2 border-r ml-4">
+          <div class="w-12 text-xs select-none space-y-1 -mt-2 border-r dark:text-warm-gray-600 dark:border-dark-300 ml-4">
             <div class="font-light">{{ getHour(hour) }}</div>
             <div class="font-light hidden">{{ getMinutes(hour, 15) }}</div>
             <div class="font-light hidden">{{ getMinutes(hour, 30) }}</div>
             <div class="font-light hidden">{{ getMinutes(hour, 45) }}</div>
           </div>
-          <div class="flex-grow border-t select-none vstack -ml-2 px-2 h-80px"></div>
+          <div class="flex-grow border-t dark:border-dark-300 select-none vstack -ml-2 px-2 h-80px"></div>
         </div>
         <div
           class="py-px absolute pl-16 pr-4 w-full z-0"
@@ -25,12 +25,12 @@
             @mousedown="dragStart"
             @dblclick="todo.finished = !todo.finished"
             :style="{ height: todo.duration / 15 * 20 - 2 + 'px' }"
-            :class="{ 'line-through': todo.finished, [`bg-${todo.color}-300`]: true }"
-            class="text-xs rounded-3px px-2 py-1 bg-opacity-70 select-none"
+            :class="{ 'line-through': todo.finished, [`bg-${todo.color}-300/70`]: true, [`dark:bg-${todo.color}-400/70`]: true }"
+            class="text-xs rounded-3px px-2 py-1 select-none"
           >{{ todo.title }}, {{ getDuration(todo.date, todo.duration) }}</div>
         </div>
       </div>
-      <hr class="absolute w-full bg-red-500 h-0.5 z-50" :style="{ top: timeLength + 'px' }" />
+      <hr class="absolute w-full bg-red-500 dark:bg-red-700 h-0.25 z-50 border-none" :style="{ top: timeLength + 'px' }" />
     </div>
   </div>
 </template>

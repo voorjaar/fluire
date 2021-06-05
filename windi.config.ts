@@ -4,7 +4,7 @@ import colors from 'windicss/colors';
 import { defineConfig } from 'vite-plugin-windicss';
 
 export default defineConfig({
-  darkMode: 'class',
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {
@@ -12,7 +12,7 @@ export default defineConfig({
       },
     },
   },
-  safelist: ['pink' , 'rose' , 'red' , 'orange' , 'yellow' , 'lime' , 'green' , 'teal' , 'cyan' , 'blue' , 'indigo' , 'purple'].map(i => `bg-${i}-300`),
+  safelist: ['pink' , 'rose' , 'red' , 'orange' , 'yellow' , 'lime' , 'green' , 'teal' , 'cyan' , 'blue' , 'indigo' , 'purple'].map(i => `bg-${i}-300/70 dark:bg-${i}-400/70`),
   shortcuts: {
     hstack: 'flex items-center',
     vstack: 'flex flex-col',
