@@ -182,7 +182,9 @@ export default defineComponent({
     }
 
     function dragStart(e: MouseEvent) {
-      item.value = (e.target as HTMLElement).parentElement?.id
+      const element = e.target as HTMLElement;
+      element.style.cursor = "move"
+      item.value = element.parentElement?.id
       start.value = e.clientY - dy.value
 
       document.onmouseup = dragEnd
@@ -200,6 +202,8 @@ export default defineComponent({
 
     function dragEnd() {
       if (item.value) {
+        const element = document.getElementById(item.value)
+        if(element && element.firstChild) (element.firstChild as HTMLElement).style.cursor = "default"
         const index = todos.value.findIndex(i => i.id === item.value)
         if (index !== -1) {
           const target = todos.value[index]
