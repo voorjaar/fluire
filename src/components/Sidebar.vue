@@ -18,15 +18,15 @@
 import { defineComponent, PropType } from 'vue'
 
 export interface NavItem {
-  id?: string,
-  name: string,
-  icon: string,
+  id?: string
+  name: string
+  icon: string
 }
 
 export interface Nav {
-  title: string;
-  children: NavItem[];
-};
+  title: string
+  children: NavItem[]
+}
 
 export default defineComponent({
   props: {
