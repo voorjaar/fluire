@@ -12,17 +12,18 @@
           <div class="flex-grow border-t select-none vstack -ml-2 px-2 h-80px"></div>
         </div>
         <div
-          class="py-px absolute pl-16 pr-4 w-full"
+          class="py-px absolute pl-16 pr-4 w-full z-0"
           :style="{ top: getPosition(todo.date, offsets[todo.id]) + 'px' }"
           v-for="todo in todos"
           :key="todo.id"
           :id="todo.id"
-          @touchstart="touchStart"
-          @touchmove="touchMove"
-          @touchend="touchEnd"
-          @mousedown="dragStart"
         >
           <div
+            @touchstart="touchStart"
+            @touchmove="touchMove"
+            @touchend="touchEnd"
+            @mousedown="dragStart"
+            @dblclick="todo.finished = !todo.finished"
             :style="{ height: todo.duration / 15 * 20 - 2 + 'px' }"
             :class="{ 'line-through': todo.finished, [`bg-${todo.color}-300`]: true }"
             class="text-xs rounded-3px px-2 py-1 bg-opacity-70 select-none"
@@ -184,8 +185,11 @@ export default defineComponent({
     function dragStart(e: MouseEvent) {
       const element = e.target as HTMLElement;
       element.style.cursor = "move"
-      item.value = element.parentElement?.id
-      start.value = e.clientY - dy.value
+      if (element.parentElement) {
+        element.parentElement.style.zIndex = "10"
+        item.value = element.parentElement.id
+        start.value = e.clientY - dy.value
+      }
 
       document.onmouseup = dragEnd
       document.onmousemove = dragMove
@@ -203,11 +207,13 @@ export default defineComponent({
     function dragEnd() {
       if (item.value) {
         const element = document.getElementById(item.value)
-        if(element && element.firstChild) (element.firstChild as HTMLElement).style.cursor = "default"
-        const index = todos.value.findIndex(i => i.id === item.value)
-        if (index !== -1) {
-          const target = todos.value[index]
-          todos.value[index].date = new Date(Date.parse(target.date) + offsets[item.value] * 60000).toISOString()
+        if (element) {
+          element.style.zIndex = "0"
+          if (element.firstChild) (element.firstChild as HTMLElement).style.cursor = "default"
+        }
+        const target = todos.value.find(i => i.id === item.value)
+        if (target) {
+          target.date = new Date(Date.parse(target.date) + offsets[item.value] * 60000).toISOString()
           offsets[item.value] = 0
         }
       }
@@ -218,8 +224,12 @@ export default defineComponent({
 
     function touchStart(e: TouchEvent) {
       if (e.target) {
-        item.value = (e.target as HTMLElement).parentElement?.id
-        start.value = e.touches[0].clientY - dy.value
+        const element = e.target as HTMLElement
+        if (element.parentElement) {
+          element.parentElement.style.zIndex = "10"
+          item.value = element.parentElement.id
+          start.value = e.touches[0].clientY - dy.value
+        }
       }
     }
 
@@ -234,10 +244,11 @@ export default defineComponent({
 
     function touchEnd() {
       if (item.value) {
-        const index = todos.value.findIndex(i => i.id === item.value)
-        if (index !== -1) {
-          const target = todos.value[index]
-          todos.value[index].date = new Date(Date.parse(target.date) + offsets[item.value] * 60000).toISOString()
+        const element = document.getElementById(item.value)
+        if (element) element.style.zIndex = "0"
+        const target = todos.value.find(i => i.id === item.value)
+        if (target) {
+          target.date = new Date(Date.parse(target.date) + offsets[item.value] * 60000).toISOString()
           offsets[item.value] = 0
         }
       }
