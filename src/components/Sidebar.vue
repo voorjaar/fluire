@@ -21,8 +21,8 @@ import type { Nav } from '../interfaces'
 
 defineProps({
   navs: {
-      type: Array as PropType<Nav[]>,
-      required: true
-    }
+    type: Array as PropType<Nav[]>,
+    required: true
+  }
 })
 </script>

@@ -9,7 +9,9 @@
     <Timeline />
   </main>
 
-  <Modal :open="openAddModal" @close="openAddModal = false"/>
+  <Modal :open="openAddModal" @close="openAddModal = false">
+    <AddForm/>
+  </Modal>
 </template>
 
 <script setup lang="ts">
@@ -19,6 +21,7 @@ import Sidebar from './components/Sidebar.vue'
 import Timeline from './components/Timeline.vue'
 import Calendar from './components/Calendar.vue'
 import Modal from './components/Modal.vue'
+import AddForm from './components/AddForm.vue'
 
 const openAddModal = ref(false)
 

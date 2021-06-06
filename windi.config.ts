@@ -8,7 +8,7 @@ export default defineConfig({
   theme: {
     extend: {
       colors: {
-        gray: colors.coolGray,
+        gray: colors.blueGray,
         card: {
           'red': '#F26267',
           'dark-orange': '#FF8467',
