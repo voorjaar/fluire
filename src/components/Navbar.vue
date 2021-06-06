@@ -5,6 +5,8 @@
         Calendar
       </h1>
 
+      <Searchbar/>
+
       <div class="nav-divider"></div>
 
       <div class="flex gap-4 items-center">
@@ -14,7 +16,12 @@
         </button>
 
         <button class="nav-button">
-          <i-ic:round-add-circle-outline />
+          <i-mdi:timer-outline/>
+        </button>
+
+        <button class="nav-button">
+          <i-bx:bxs-alarm-add/>
+          <!-- <i-ic:round-add-circle-outline /> -->
         </button>
       </div>
     </div>
@@ -24,6 +31,7 @@
 <script setup lang="ts">
 import { useToggle } from '@vueuse/core'
 import { isDark } from '../composables/dark'
+import Searchbar from './Searchbar.vue'
 
 const toggle = useToggle(isDark)
 </script>
@@ -33,9 +41,9 @@ const toggle = useToggle(isDark)
     @apply relative z-30 h-16 md:(flex items-center);
   }
   .nav-button {
-    @apply rounded-lg bg-blue-gray-100 hover:bg-blue-gray-200 p-2 text-xl text-gray-600 dark:(text-light-300 bg-dark-700 hover:bg-dark-500);
+    @apply rounded-lg bg-blue-gray-100 hover:bg-blue-gray-200 p-2 text-lg text-gray-600 dark:(text-light-300 bg-dark-700 hover:bg-dark-500);
   }
   .nav-divider {
-    @apply w-px bg-gray-300 dark:bg-dark-300 my-4 mx-4;
+    @apply w-px bg-gray-300 dark:bg-dark-300 my-5 mx-4;
   }
 </style>
