@@ -5,16 +5,22 @@
         <Calendar/>
       </Sidebar>
     </div>
-    <Navbar />
+    <Navbar @add="openAddModal = !openAddModal"/>
     <Timeline />
   </main>
+
+  <Modal :open="openAddModal" @close="openAddModal = false"/>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import Navbar from './components/Navbar.vue'
 import Sidebar from './components/Sidebar.vue'
 import Timeline from './components/Timeline.vue'
 import Calendar from './components/Calendar.vue'
+import Modal from './components/Modal.vue'
+
+const openAddModal = ref(false)
 
 const navs = [
   {

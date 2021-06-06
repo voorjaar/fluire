@@ -27,9 +27,8 @@
           <i-ion:ios-timer-outline/>
         </button>
 
-        <button class="nav-button">
+        <button class="nav-button" @click="$emit('add')">
           <i-ion:add/>
-          <!-- <i-ic:round-add-circle-outline /> -->
         </button>
       </div>
     </div>
@@ -37,6 +36,7 @@
 </template>
 
 <script setup lang="ts">
+import { defineEmit } from 'vue'
 import { useToggle } from '@vueuse/core'
 import { isDark } from '../composables/dark'
 import Searchbar from './Searchbar.vue'
