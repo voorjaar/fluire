@@ -23,7 +23,7 @@
           <i-ion:sunny-outline v-show="!isDark" />
         </button>
 
-        <button class="nav-button">
+        <button class="nav-button" @click="$emit('timer')">
           <i-ion:ios-timer-outline/>
         </button>
 

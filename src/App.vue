@@ -5,12 +5,16 @@
         <Calendar/>
       </Sidebar>
     </div>
-    <Navbar @add="openAddModal = !openAddModal"/>
+    <Navbar @add="openAddModal = !openAddModal" @timer="openTimerModal = !openTimerModal"/>
     <Timeline />
   </main>
 
   <Modal :open="openAddModal" @close="openAddModal = false">
     <AddForm/>
+  </Modal>
+
+  <Modal :open="openTimerModal" @close="openTimerModal = false">
+    <Timer/>
   </Modal>
 </template>
 
@@ -22,8 +26,10 @@ import Timeline from './components/Timeline.vue'
 import Calendar from './components/Calendar.vue'
 import Modal from './components/Modal.vue'
 import AddForm from './components/AddForm.vue'
+import Timer from './components/Timer.vue'
 
 const openAddModal = ref(false)
+const openTimerModal = ref(false)
 
 const navs = [
   {
