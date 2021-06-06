@@ -3,7 +3,7 @@ export interface Todo {
   title: string
   date: string
   duration: number
-  color: 'pink' | 'rose' | 'red' | 'orange' | 'yellow' | 'lime' | 'green' | 'teal' | 'cyan' | 'blue' | 'indigo' | 'purple'
+  color: 'red' | 'dark-orange' | 'orange' | 'yellow' | 'green' | 'teal' | 'light-blue' | 'blue' | 'dark-blue' | 'dark-purple' | 'purple' | 'pink' | 'dark-gray' | 'gray' | 'brown'
   finished: boolean
 }
 

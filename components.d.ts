@@ -4,9 +4,11 @@
 declare module 'vue' {
   export interface GlobalComponents {
     Calendar: typeof import('./src/components/Calendar.vue')['default']
+    Dropdown: typeof import('./src/components/Dropdown.vue')['default']
     Navbar: typeof import('./src/components/Navbar.vue')['default']
     Searchbar: typeof import('./src/components/Searchbar.vue')['default']
     Sidebar: typeof import('./src/components/Sidebar.vue')['default']
+    Timeline: typeof import('./src/components/Timeline.vue')['default']
   }
 }
 

@@ -34,8 +34,8 @@
             @mousedown="dragStart"
             @dblclick="todo.finished = !todo.finished"
             :style="{ height: todo.duration / 15 * 20 - 2 + 'px' }"
-            :class="{ 'line-through': todo.finished, [`bg-${todo.color}-300/70`]: true, [`dark:bg-${todo.color}-300/80`]: true }"
-            class="text-xs rounded-3px px-2 py-1 select-none backdrop-filter backdrop-blur-sm cursor-pointer"
+            :class="{ 'line-through': todo.finished, [`bg-card-${todo.color}`]: true }"
+            class="text-sm rounded-3px px-2 py-1 select-none backdrop-filter backdrop-blur-sm cursor-pointer text-white font-medium bg-opacity-80 dark:bg-opacity-90"
           >{{ todo.title }}, {{ getDuration(todo.date, todo.duration) }}</div>
         </div>
       </div>
@@ -68,7 +68,7 @@ const todos = ref<Todo[]>([
     title: 'Breakfast',
     date: '2021-6-5 07:00',
     duration: 60,
-    color: 'teal',
+    color: 'blue',
     finished: false
   },
   {
@@ -76,7 +76,7 @@ const todos = ref<Todo[]>([
     title: 'Programming',
     date: '2021-6-5 08:00',
     duration: 150,
-    color: 'blue',
+    color: 'green',
     finished: false
   },
   {
@@ -84,7 +84,7 @@ const todos = ref<Todo[]>([
     title: 'Play with cats',
     date: '2021-6-5 10:30',
     duration: 30,
-    color: 'purple',
+    color: 'orange',
     finished: false
   },
   {
@@ -92,7 +92,7 @@ const todos = ref<Todo[]>([
     title: 'Lunch',
     date: '2021-6-5 11:00',
     duration: 60,
-    color: 'teal',
+    color: 'blue',
     finished: false
   },
   {
@@ -100,7 +100,7 @@ const todos = ref<Todo[]>([
     title: 'Take a nap',
     date: '2021-6-5 12:00',
     duration: 30,
-    color: 'pink',
+    color: 'dark-orange',
     finished: false
   },
   {
@@ -108,7 +108,7 @@ const todos = ref<Todo[]>([
     title: 'Programming',
     date: '2021-6-5 13:00',
     duration: 180,
-    color: 'blue',
+    color: 'green',
     finished: false
   },
   {
@@ -116,7 +116,7 @@ const todos = ref<Todo[]>([
     title: 'Dinner',
     date: '2021-6-5 17:00',
     duration: 60,
-    color: 'teal',
+    color: 'blue',
     finished: false
   },
   {
@@ -124,7 +124,7 @@ const todos = ref<Todo[]>([
     title: 'Play with cats',
     date: '2021-6-5 18:00',
     duration: 30,
-    color: 'purple',
+    color: 'orange',
     finished: false
   },
   {
@@ -132,7 +132,7 @@ const todos = ref<Todo[]>([
     title: 'Reading',
     date: '2021-6-5 18:30',
     duration: 60,
-    color: 'pink',
+    color: 'dark-orange',
     finished: false
   },
   {
@@ -140,7 +140,7 @@ const todos = ref<Todo[]>([
     title: 'Programming',
     date: '2021-6-5 20:00',
     duration: 150,
-    color: 'blue',
+    color: 'green',
     finished: false
   },
 ])

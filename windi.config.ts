@@ -9,10 +9,27 @@ export default defineConfig({
     extend: {
       colors: {
         gray: colors.coolGray,
+        card: {
+          'red': '#F26267',
+          'dark-orange': '#FF8467',
+          'orange': '#F7A64F',
+          'yellow': '#EDC400',
+          'green': '#43C85E',
+          'teal': '#00CEAC',
+          'light-blue': '#00CBDE',
+          'blue': '#00B7F7',
+          'dark-blue': '#4767C6',
+          'dark-purple': '#B755C2',
+          'purple': '#BA79E4',
+          'pink': '#F68BD5',
+          'dark-gray': '#86919B',
+          'gray': '#939F95',
+          'brown': '#9D908C'
+        }
       },
     },
   },
-  safelist: ['pink' , 'rose' , 'red' , 'orange' , 'yellow' , 'lime' , 'green' , 'teal' , 'cyan' , 'blue' , 'indigo' , 'purple'].map(i => `bg-${i}-300/70 dark:bg-${i}-300/80`),
+  safelist: ['red', 'dark-orange', 'orange', 'yellow', 'green', 'teal', 'light-blue', 'blue', 'dark-blue', 'dark-purple', 'purple', 'pink', 'dark-gray', 'gray', 'brown'].map(i => `bg-card-${i}`),
   shortcuts: {
     hstack: 'flex items-center',
     vstack: 'flex flex-col',
