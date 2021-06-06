@@ -38,17 +38,9 @@
   </div>
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue'
-
-  export default defineComponent({
-    name: 'App',
-    data() {
-      return {
-        open: false
-      }
-    }
-  })
+<script setup lang="ts">
+  import { ref } from 'vue'
+  let open = ref(false)
 </script>
 
 <style lang="postcss">
@@ -60,10 +52,10 @@
       }
     }
     &-menu {
-      @apply hidden absolute top-full left-0 z-40 min-w-48 pt-1 bg-white dark:bg-dark-700 rounded-lg;
+      @apply hidden absolute top-full left-0 z-40 min-w-48 pt-1 -mt-1 bg-white/70 dark:bg-dark-900/80 rounded-lg border dark:border-dark-300;
     }
     &-content {
-      @apply bg-white dark:bg-dark-700 py-2 rounded shadow;
+      @apply bg-white/70 dark:bg-dark-900/80 py-2 rounded shadow;
     }
     &-divider {
       @apply bg-gray-300 dark:bg-dark-300 block h-px my-2 border-none;

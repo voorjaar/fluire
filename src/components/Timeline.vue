@@ -9,7 +9,16 @@
             <div class="font-light hidden">{{ getMinutes(hour, 30) }}</div>
             <div class="font-light hidden">{{ getMinutes(hour, 45) }}</div>
           </div>
-          <div class="flex-grow border-t dark:border-dark-300 select-none vstack -ml-2 px-2 h-80px"></div>
+          <div class="flex-grow border-t dark:border-dark-300 select-none vstack -ml-2 px-2 h-80px" v-if="layout === 'day'"></div>
+          <div class="flex-grow border-t dark:border-dark-300 select-none vstack -ml-2 px-2 h-80px grid grid-cols-7" v-else-if="layout === 'week'">
+            <div class="h-full w-full"></div>
+            <div class="h-full w-full border-l"></div>
+            <div class="h-full w-full border-l"></div>
+            <div class="h-full w-full border-l"></div>
+            <div class="h-full w-full border-l"></div>
+            <div class="h-full w-full border-l"></div>
+            <div class="h-full w-full border-l"></div>
+          </div>
         </div>
         <div
           class="py-px absolute pl-16 pr-4 w-full z-0"
@@ -143,6 +152,7 @@ let timeLength = ref<number>(calcTimeLength())
 let item = ref<string | undefined>(undefined)
 let start = ref(0)
 let dy = ref(0)
+let layout = ref('day')
 
 function calcTimeLength() {
   const date = new Date()
