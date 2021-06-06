@@ -7,20 +7,28 @@
 
       <Searchbar/>
 
-      <div class="nav-divider"></div>
+      <div class="nav-divider hidden lg:block"></div>
+
+      <Dropdown/>
+
+      <div class="nav-divider hidden lg:block"></div>
 
       <div class="flex gap-4 items-center">
+        <button class="nav-button">
+          <i-simple-line-icons:settings/>
+        </button>
+
         <button class="nav-button" @click="toggle">
-          <i-bx:bx-moon v-show="isDark"/>
-          <i-ion-ios-sunny v-show="!isDark" />
+          <i-cil:moon v-show="isDark"/>
+          <i-ion:sunny-outline v-show="!isDark" />
         </button>
 
         <button class="nav-button">
-          <i-mdi:timer-outline/>
+          <i-ion:ios-timer-outline/>
         </button>
 
         <button class="nav-button">
-          <i-bx:bxs-alarm-add/>
+          <i-ion:add/>
           <!-- <i-ic:round-add-circle-outline /> -->
         </button>
       </div>
@@ -32,6 +40,7 @@
 import { useToggle } from '@vueuse/core'
 import { isDark } from '../composables/dark'
 import Searchbar from './Searchbar.vue'
+import Dropdown from './Dropdown.vue'
 
 const toggle = useToggle(isDark)
 </script>
