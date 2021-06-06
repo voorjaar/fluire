@@ -17,3 +17,8 @@ export interface Nav {
   title: string
   children: NavItem[]
 }
+
+export interface Option {
+  label: string
+  value: string
+}
