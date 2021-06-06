@@ -9,7 +9,7 @@
       <option v-for="option in options" :value="option.value">{{ option.label }}</option>
     </select>
     <span class="absolute right-0 mt-2.5 mr-2 dark:text-warm-gray-200">
-      <i-mdi-light:chevron-down />
+      <i-mdi:chevron-down />
     </span>
   </div>
 </template>

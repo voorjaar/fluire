@@ -14,7 +14,7 @@
       <div class="nav-divider hidden lg:block"></div>
 
       <div class="flex gap-4 items-center">
-        <button class="nav-button">
+        <button class="nav-button" @click="$emit('setup')">
           <i-simple-line-icons:settings/>
         </button>
 
