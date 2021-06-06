@@ -2,7 +2,7 @@
   <div class="flex items-center justify-center pt-2.5 pb-4">
     <div class="max-w-sm w-full rounded-md">
       <div class="flex items-center justify-between leading-8 pl-1.5">
-        <h1 class="text-sm font-medium text-gray-800 dark:text-gray-100">October 2020</h1>
+        <h1 class="text-base font-medium text-gray-800 dark:text-gray-100 font-serif">October 2020</h1>
         <div class="flex items-center text-gray-800 dark:text-gray-100 gap-3">
           <button class="rounded p-1 bg-blue-gray-100 dark:bg-dark-500">
             <svg
@@ -44,37 +44,37 @@
             <tr>
               <th>
                 <div class="w-full flex justify-center">
-                  <p class="text-xs font-medium text-center text-gray-800 dark:text-gray-100">Mo</p>
+                  <p class="text-xs font-medium font-serif text-center text-gray-800 dark:text-gray-100">Mo</p>
                 </div>
               </th>
               <th>
                 <div class="w-full flex justify-center">
-                  <p class="text-xs font-medium text-center text-gray-800 dark:text-gray-100">Tu</p>
+                  <p class="text-xs font-medium font-serif text-center text-gray-800 dark:text-gray-100">Tu</p>
                 </div>
               </th>
               <th>
                 <div class="w-full flex justify-center">
-                  <p class="text-xs font-medium text-center text-gray-800 dark:text-gray-100">We</p>
+                  <p class="text-xs font-medium font-serif text-center text-gray-800 dark:text-gray-100">We</p>
                 </div>
               </th>
               <th>
                 <div class="w-full flex justify-center">
-                  <p class="text-xs font-medium text-center text-gray-800 dark:text-gray-100">Th</p>
+                  <p class="text-xs font-medium font-serif text-center text-gray-800 dark:text-gray-100">Th</p>
                 </div>
               </th>
               <th>
                 <div class="w-full flex justify-center">
-                  <p class="text-xs font-medium text-center text-gray-800 dark:text-gray-100">Fr</p>
+                  <p class="text-xs font-medium font-serif text-center text-gray-800 dark:text-gray-100">Fr</p>
                 </div>
               </th>
               <th>
                 <div class="w-full flex justify-center">
-                  <p class="text-xs font-medium text-center text-gray-800 dark:text-gray-100">Sa</p>
+                  <p class="text-xs font-medium font-serif text-center text-gray-800 dark:text-gray-100">Sa</p>
                 </div>
               </th>
               <th>
                 <div class="w-full flex justify-center">
-                  <p class="text-xs font-medium text-center text-gray-800 dark:text-gray-100">Su</p>
+                  <p class="text-xs font-medium font-serif text-center text-gray-800 dark:text-gray-100">Su</p>
                 </div>
               </th>
             </tr>
@@ -82,48 +82,48 @@
           <tbody>
             <tr>
               <td class="pt-2">
-                <div class="p-1.5 cursor-pointer flex w-full justify-center"></div>
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center"></div>
               </td>
               <td class="pt-2">
-                <div class="p-1.5 cursor-pointer flex w-full justify-center"></div>
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center"></div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center"></div>
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center"></div>
               </td>
               <td class="pt-2">
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">1</p>
                 </div>
               </td>
               <td class="pt-2">
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">2</p>
                 </div>
               </td>
               <td class="pt-2">
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100">3</p>
                 </div>
               </td>
               <td class="pt-2">
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100">4</p>
                 </div>
               </td>
             </tr>
             <tr>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">5</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">6</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">7</p>
                 </div>
               </td>
@@ -137,118 +137,118 @@
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">9</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100">10</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100">11</p>
                 </div>
               </td>
             </tr>
             <tr>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">12</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">13</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">14</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">15</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">16</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100">17</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100">18</p>
                 </div>
               </td>
             </tr>
             <tr>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">19</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">20</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">21</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">22</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">23</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100">24</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100">25</p>
                 </div>
               </td>
             </tr>
             <tr>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">26</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">27</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">28</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">29</p>
                 </div>
               </td>
               <td>
-                <div class="p-1.5 cursor-pointer flex w-full justify-center">
+                <div class="px-1.5 py-2 cursor-pointer flex w-full justify-center">
                   <p class="text-11px text-gray-600 dark:text-gray-100 font-medium">30</p>
                 </div>
               </td>
