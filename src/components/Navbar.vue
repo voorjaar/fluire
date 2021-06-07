@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar fixed top-0 w-full sm:pl-60" role="navigation" aria-label="main navigation">
     <div class="border-b bg-white/70 backdrop-filter backdrop-blur-md dark:bg-dark-900/80 dark:border-dark-300 shadow-sm w-full h-full my-auto flex px-4">
-      <h1 class="flex-grow dark:text-light-200 flex items-center font-serif text-lg tracking-wider">
-        Calendar
+      <h1 class="flex-grow dark:text-light-200 flex items-center text-lg tracking-wider font-serif">
+        Fluire. Calendar
       </h1>
 
       <Searchbar/>

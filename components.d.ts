@@ -10,6 +10,7 @@ declare module 'vue' {
     Modal: typeof import('./src/components/Modal.vue')['default']
     Navbar: typeof import('./src/components/Navbar.vue')['default']
     Searchbar: typeof import('./src/components/Searchbar.vue')['default']
+    Settings: typeof import('./src/components/Settings.vue')['default']
     Sidebar: typeof import('./src/components/Sidebar.vue')['default']
     Timeline: typeof import('./src/components/Timeline.vue')['default']
     Timer: typeof import('./src/components/Timer.vue')['default']
